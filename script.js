@@ -4,8 +4,8 @@ const resultElement = document.getElementById('result');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const num1 = form.elements.num1.value;
-  const num2 = form.elements.num2.value;
+  const num1 = parseInt(form.elements.num1.value);
+  const num2 = parseInt(form.elements.num2.value);
 
   // Send a POST request to the server
   fetch('/calculate', {
