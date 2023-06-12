@@ -22,10 +22,10 @@ function calculate() {
   const num1 = parseInt(num1Input.value);
   const num2 = parseInt(num2Input.value);
   
-  if (isNaN(num1) || isNaN(num2)) {
-    resultElement.textContent = 'Invalid input';
-    return;
-  }
+  // if (isNaN(num1) || isNaN(num2)) {
+  //   resultElement.textContent = 'Invalid input';
+  //   return;
+  // }
   
   const result = num1 + num2;
   resultElement.textContent = ` ${result}`;
