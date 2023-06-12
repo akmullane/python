@@ -8,7 +8,7 @@ form.addEventListener('submit', (event) => {
   const num2 = parseInt(form.elements.num2.value);
 
   // Send a POST request to the server
-  fetch('/calculate', {
+  fetch('/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
