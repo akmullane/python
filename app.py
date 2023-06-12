@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
+
+from calculator import add
 
 @app.route('/')
 def home():
@@ -10,7 +12,7 @@ def home():
 def calculate():
     num1 = int(request.form['num1'])
     num2 = int(request.form['num2'])
-    result = num1 + num2
+    result = add(num1, num2)
     return render_template('index.html', result=result)
 
 if __name__ == '__main__':
