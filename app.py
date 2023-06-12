@@ -8,11 +8,10 @@ def home():
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
-    data = request.get_json()
-    num1 = int(data['num1'])
-    num2 = int(data['num2'])
+    num1 = int(request.form['num1'])
+    num2 = int(request.form['num2'])
     result = num1 + num2
-    return jsonify({'result': result})
+    return render_template('index.html', result=result)
 
 if __name__ == '__main__':
     app.run()
