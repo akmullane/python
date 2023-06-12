@@ -28,5 +28,5 @@ function calculate() {
   }
   
   const result = num1 + num2;
-  resultElement.textContent = `Result: ${result}`;
+  resultElement.textContent = ` ${result}`;
 }
