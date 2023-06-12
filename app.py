@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -6,10 +6,13 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/calculate/<int:num1>/<int:num2>')
-def calculate(num1, num2):
+@app.route('/calculate', methods=['POST'])
+def calculate():
+    data = request.get_json()
+    num1 = int(data['num1'])
+    num2 = int(data['num2'])
     result = num1 + num2
-    return f"The result of the calculation is: {result}"
+    return jsonify({'result': result})
 
 if __name__ == '__main__':
     app.run()
