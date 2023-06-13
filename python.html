@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Python Code Execution</title>
+    <script src="https://www.skulpt.org/static/skulpt.min.js" type="text/javascript"></script>
+    <script src="https://www.skulpt.org/static/skulpt-stdlib.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <h1>Python Code Execution</h1>
+    <textarea id="code" rows="10" cols="50"></textarea>
+    <button onclick="runCode()">Run Code</button>
+    <pre id="output"></pre>
+
+    <script type="text/javascript">
+        function runCode() {
+            var code = document.getElementById("code").value;
+            var output = document.getElementById("output");
+
+            Sk.configure({
+                output: function (text) {
+                    output.textContent += text;
+                },
+                read: function (filename) {
+                    throw "File I/O not supported in Skulpt.";
+                },
+                inputfun: function (prompt) {
+                    return prompt;
+                },
+            });
+
+            Sk.misceval.asyncToPromise(function () {
+                return Sk.importMainWithBody("<stdin>", false, code, true);
+            }).then(function (mod) {
+                console.log("Python code executed successfully.");
+            }, function (err) {
+                console.error("Error executing Python code:", err.toString());
+            });
+        }
+    </script>
+</body>
+
+</html>
