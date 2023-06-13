@@ -1,40 +1,61 @@
 /* styles.css */
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  input[type="number"] {
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #555;
-  }
-  
-  h2 {
-    color: #333;
-    margin-top: 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+h2 {
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Menu bar styles */
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+ul.menu li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+ul.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul.menu li a:hover {
+  background-color: #555;
+}
