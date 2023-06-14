@@ -59,3 +59,8 @@ ul.menu li a {
 ul.menu li a:hover {
   background-color: #555;
 }
+
+.embed-container {
+  width: 900px;
+  height: 900px;
+}
